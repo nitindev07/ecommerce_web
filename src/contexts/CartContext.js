@@ -1,5 +1,4 @@
 import React, {useState, createContext, useEffect } from 'react'
-import { ToastProvider, useToasts } from 'react-toast-notifications';
 
 export const CartContext= createContext()
 
