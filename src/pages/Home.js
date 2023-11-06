@@ -35,7 +35,7 @@ const Home = () => {
             })}
           </div>
           <div>
-            <h1> {show && <div className="z-40 fixed border bg-white rounded-lg border-black shadow-2xl -ml-20 left-1/2 bottom-10 py-2 px-2">
+            <h1> {show && <div className="z-40 fixed border bg-white rounded-lg border-black shadow-2xl -ml-28 lg:-ml-20 left-1/2 bottom-10 py-2 px-2">
               <div className="flex justify-between items-center gap-x-4  px-4">
               <TiTick className="w-6 h-6 -ml-2 bg-green-400 rounded-full text-white"/>  
               <div className="text-xl font-semibold">Added To Cart</div>            

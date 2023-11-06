@@ -25,7 +25,7 @@ const Sidebar = () => {
       <div className='flex flex-col py-4 gap-y-3'>
       <div className='flex justify-between w-full items-center mb-2'>
         <div className='uppercase font-semibold'><span className='me-2'>Total:</span>$ {parseFloat(total).toFixed(2)}</div>
-        <div onClick={()=>clearCart()} className='bg-red-500 w-12 h-12 flex justify-center cursor pointer text-xl items-centers py-3 text-white'><FiTrash2/></div>
+        <div onClick={()=>{clearCart(); handleopen();}} className='bg-red-500 w-12 h-12 flex justify-center cursor pointer text-xl items-centers py-3 text-white'><FiTrash2/></div>
       </div>
       <Link className='flex justify-center bg-gray-200 p-4'>View Cart</Link>
       <Link className='flex justify-center bg-black text-white py-4'>Checkout</Link>
