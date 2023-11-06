@@ -7,12 +7,14 @@ import {FiTrash2} from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
+  const {itemAmount}= useContext(CartContext)
+
   const {isopen,handleopen}= useContext(SidebarContext)
   const {clearCart, total ,cart}=useContext(CartContext)
   return (
     <div className={`${isopen ? 'right-0':'-right-[100%]'} h-full bg-white fixed top-0 w-full shadow-2xl md:w-[35vw] xl:max-w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[35px]`}>
       <div className='flex items-center justify-between py-6 border-b'>
-        <div className='font-semibold text-sm uppercase'>Shoping Bag (0)</div>
+        <div className='font-semibold text-sm uppercase'>Shoping Bag ({itemAmount})</div>
         <div onClick={handleopen} className='text-2xl flex justify-center items-center cursor-pointer '><IoMdArrowForward/></div>
       </div>
       <div className='flex flex-col gap-y-2 h-[520px] lg:h-[540px] overflow-y-auto overflow-x-hidden border-b'>
