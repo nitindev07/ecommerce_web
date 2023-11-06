@@ -17,7 +17,7 @@ const Sidebar = () => {
         <div className='font-semibold text-sm uppercase'>Shoping Bag ({itemAmount})</div>
         <div onClick={handleopen} className='text-2xl flex justify-center items-center cursor-pointer '><IoMdArrowForward/></div>
       </div>
-      <div className='flex flex-col gap-y-2 h-[520px] lg:h-[540px] overflow-y-auto overflow-x-hidden border-b'>
+      <div className='flex flex-col gap-y-2 h-[450px] lg:h-[520px] overflow-y-auto overflow-x-hidden border-b'>
         {cart.map((item)=>{
           return <CartItem item={item} key={item.id}/>
         })}
