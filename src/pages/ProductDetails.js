@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
+import {TiTick} from 'react-icons/ti'
 
-const ProductDetails = () => {
+const ProductDetails = ({git,show}) => {
   const { products } = useContext(ProductContext);
   const {addToCart}=useContext(CartContext)
 
@@ -35,8 +36,17 @@ const ProductDetails = () => {
               <h3 className="text-2xl font-medium text-center max-w-[450px] lg:text-start">{title}</h3>
               <div className="text-lg font-medium text-center mb-2 lg:text-start text-red-700">$ {price}</div>
               <div className="text-center lg:text-start text-[12px] mb-3 lg:text-[16px] font-medium">{description}</div>
-              <button className="bg-primary mx-auto lg:mx-0 text-white w-[150px] py-3 px-3" onClick={()=>addToCart(product, product.id)} >Add To Cart</button>
+              <button className="bg-primary mx-auto lg:mx-0 text-white w-[150px] py-3 px-3" onClick={()=>{addToCart(product, product.id);
+                git();}} >Add To Cart</button>
             </div>
+          </div>
+          <div>
+          <h1> {show && <div className="z-40 fixed border bg-white rounded-lg border-black shadow-2xl -ml-28 lg:-ml-20 left-1/2 bottom-10 py-2 px-2">
+              <div className="flex justify-between items-center gap-x-4  px-4">
+              <TiTick className="w-6 h-6 -ml-2 bg-green-400 rounded-full text-white"/>  
+              <div className="text-xl font-semibold">Added To Cart</div>            
+              </div>
+            </div>}</h1>
           </div>
         </div>
       </div>

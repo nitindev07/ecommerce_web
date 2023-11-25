@@ -1,22 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 //import product context
 import { ProductContext } from "../contexts/ProductContext";
 import Product from "../components/Product";
 import Hero from "../components/Hero";
 import {TiTick} from 'react-icons/ti'
 
-const Home = () => {
+const Home = ({git, show}) => {
   const { products } = useContext(ProductContext);
 
-  const [show, setShow] = useState(false);
-
-  const git = () => {
-    setShow(true);
-
-    setTimeout(() => {
-      setShow(false);
-    }, 500); // Display "Add to Cart" for 2 seconds (2000 milliseconds)
-  };
+ 
 
   const filterProduct = products.filter((items) => {
     return (
